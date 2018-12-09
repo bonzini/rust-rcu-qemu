@@ -8,6 +8,10 @@ pub use period::drop_rcu;
 pub use period::Reader;
 pub use period::Guard;
 
+mod cell;
+pub use cell::Cell;
+pub use cell::Unlinked;
+
 #[cfg(test)]
 mod tests {
     use std::sync::{Arc, Condvar, Mutex};
