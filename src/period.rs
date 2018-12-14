@@ -20,7 +20,7 @@ impl <F: FnOnce()> FnBox for F {
     }
 }
 
-type Destructor = Box<FnBox + Send>;
+type Destructor = Box<dyn FnBox + Send>;
 
 struct RCU {
     // Rust's mpsc::Sender design is not optimal here, because
