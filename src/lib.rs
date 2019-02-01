@@ -1,9 +1,5 @@
-extern crate arrayvec;
-extern crate census;
-
 mod period;
 pub use period::synchronize_rcu;
-pub use period::call_rcu;
 pub use period::drop_rcu;
 pub use period::Reader;
 pub use period::Guard;
@@ -11,6 +7,8 @@ pub use period::Guard;
 mod cell;
 pub use cell::Cell;
 pub use cell::Unlinked;
+
+mod bindgen;
 
 #[cfg(test)]
 mod tests {

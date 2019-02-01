@@ -189,8 +189,8 @@ mod tests {
     }
 
     #[test]
-    fn call_rcu_ordering() {
-        let reader = Reader::new();
+    fn drop_rcu_ordering() {
+        let reader = Reader::get();
         let (object, check) = RCUTest::pair();
         let mut cell = Cell::<RCUTest>::new(Some(object));
 
